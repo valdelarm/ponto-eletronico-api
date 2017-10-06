@@ -21,7 +21,7 @@ public class Lancamento implements Serializable{
     private TipoEnum tipo;
     private Funcionario funcionario;
 
-    Lancamento() {}
+    public Lancamento() {}
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

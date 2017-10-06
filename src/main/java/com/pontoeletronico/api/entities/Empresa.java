@@ -23,7 +23,7 @@ public class Empresa implements Serializable {
 
     private List<Funcionario> funcionarios;
 
-    Empresa(){}
+    public Empresa(){}
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
