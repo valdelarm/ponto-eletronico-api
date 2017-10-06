@@ -3,11 +3,13 @@ package com.pontoeletronico.api.entities;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name = "EMPRESA")
 public class Empresa implements Serializable {
-    private static final long serialVersionUID = 3960436649365666213L;
+
+    private static final long serialVersionUID = -6195311953440191252L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,6 +26,8 @@ public class Empresa implements Serializable {
 
     @Column(name = "DATA_ATUALIZACAO", nullable = false)
     private Date dataAtualizacao;
+
+    private List<Funcionario> funcionarios;
 
     Empresa(){}
 
@@ -65,6 +69,15 @@ public class Empresa implements Serializable {
 
     public void setDataAtualizacao(Date dataAtualizacao) {
         this.dataAtualizacao = dataAtualizacao;
+    }
+
+    @OneToMany(mappedBy = "EMPRESA", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    public List<Funcionario> getFuncionarios() {
+        return funcionarios;
+    }
+
+    public void setFuncionarios(List<Funcionario> funcionarios) {
+        this.funcionarios = funcionarios;
     }
 
     @PreUpdate
