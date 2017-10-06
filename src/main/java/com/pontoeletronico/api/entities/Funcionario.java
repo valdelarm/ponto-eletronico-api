@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Entity
-@Table(name = "FUNCIONARIO")
+@Table(name = "funcionario")
 public class Funcionario implements Serializable {
 
     private static final long serialVersionUID = 885439450137799626L;
@@ -41,7 +41,7 @@ public class Funcionario implements Serializable {
         this.id = id;
     }
 
-    @Column(name = "NOME", nullable = false)
+    @Column(name = "nome", nullable = false)
     public String getNome() {
         return nome;
     }
@@ -50,7 +50,7 @@ public class Funcionario implements Serializable {
         this.nome = nome;
     }
 
-    @Column(name = "EMAIL", nullable = false)
+    @Column(name = "email", nullable = false)
     public String getEmail() {
         return email;
     }
@@ -59,7 +59,7 @@ public class Funcionario implements Serializable {
         this.email = email;
     }
 
-    @Column(name = "SENHA", nullable = false)
+    @Column(name = "senha", nullable = false)
     public String getSenha() {
         return senha;
     }
@@ -68,7 +68,7 @@ public class Funcionario implements Serializable {
         this.senha = senha;
     }
 
-    @Column(name = "CPF", nullable = false)
+    @Column(name = "cpf", nullable = false)
     public String getCpf() {
         return cpf;
     }
@@ -77,7 +77,7 @@ public class Funcionario implements Serializable {
         this.cpf = cpf;
     }
 
-    @Column(name = "VALOR_HORA")
+    @Column(name = "valor_hora")
     public BigDecimal getValorHora() {
         return valorHora;
     }
@@ -86,7 +86,7 @@ public class Funcionario implements Serializable {
         this.valorHora = valorHora;
     }
 
-    @Column(name = "QTD_HORAS_TRABALHO_DIA")
+    @Column(name = "qtd_horas_trabalho_dia")
     public Float getQtdHorasTrabalhoDia() {
         return qtdHorasTrabalhoDia;
     }
@@ -101,7 +101,7 @@ public class Funcionario implements Serializable {
         this.qtdHorasTrabalhoDia = qtdHorasTrabalhoDia;
     }
 
-    @Column(name = "QTD_HORAS_ALMOCO")
+    @Column(name = "qtd_horas_almoco")
     public Float getQtdHorasAlmoco() {
         return qtdHorasAlmoco;
     }
@@ -117,7 +117,7 @@ public class Funcionario implements Serializable {
     }
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "PERFIL", nullable = false)
+    @Column(name = "perfil", nullable = false)
     public PerfilEnum getPerfil() {
         return perfil;
     }
@@ -126,7 +126,7 @@ public class Funcionario implements Serializable {
         this.perfil = perfil;
     }
 
-    @Column(name = "DATA_CRIACAO", nullable = false)
+    @Column(name = "data_criacao", nullable = false)
     public Date getDataCriacao() {
         return dataCriacao;
     }
@@ -135,7 +135,7 @@ public class Funcionario implements Serializable {
         this.dataCriacao = dataCriacao;
     }
 
-    @Column(name = "DATA_ATUALIZACAO", nullable = false)
+    @Column(name = "data_atualizacao", nullable = false)
     public Date getDataAtualizacao() {
         return dataAtualizacao;
     }
@@ -153,7 +153,7 @@ public class Funcionario implements Serializable {
         this.empresa = empresa;
     }
 
-    @OneToMany(mappedBy = "FUNCIONARIO", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "funcionario", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     public List<Lancamento> getLancamentos() {
         return lancamentos;
     }

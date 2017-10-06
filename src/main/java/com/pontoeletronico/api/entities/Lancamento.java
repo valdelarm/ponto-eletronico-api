@@ -7,7 +7,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 @Entity
-@Table(name = "LANCAMENTO")
+@Table(name = "lancamento")
 public class Lancamento implements Serializable{
 
     private static final long serialVersionUID = -1853568216622602380L;
@@ -34,7 +34,7 @@ public class Lancamento implements Serializable{
     }
 
     @Temporal(TemporalType.TIMESTAMP)
-    @Column(name = "DATA", nullable = false)
+    @Column(name = "data", nullable = false)
     public Date getData() {
         return data;
     }
@@ -43,7 +43,7 @@ public class Lancamento implements Serializable{
         this.data = data;
     }
 
-    @Column(name = "DESCRICAO")
+    @Column(name = "descricao")
     public String getDescricao() {
         return descricao;
     }
@@ -52,7 +52,7 @@ public class Lancamento implements Serializable{
         this.descricao = descricao;
     }
 
-    @Column(name = "LOCALIZACAO")
+    @Column(name = "localizacao")
     public String getLocalizacao() {
         return localizacao;
     }
@@ -61,7 +61,7 @@ public class Lancamento implements Serializable{
         this.localizacao = localizacao;
     }
 
-    @Column(name = "DATA_CRIACAO", nullable = false)
+    @Column(name = "data_criacao", nullable = false)
     public Date getDataCriacao() {
         return dataCriacao;
     }
@@ -70,7 +70,7 @@ public class Lancamento implements Serializable{
         this.dataCriacao = dataCriacao;
     }
 
-    @Column(name = "DATA_ATUALIZACAO", nullable = false)
+    @Column(name = "data_atualizacao", nullable = false)
     public Date getDataAtualizacao() {
         return dataAtualizacao;
     }
@@ -80,7 +80,7 @@ public class Lancamento implements Serializable{
     }
 
     @Enumerated(EnumType.STRING)
-    @Column(name = "TIPO", nullable = false)
+    @Column(name = "tipo", nullable = false)
     public TipoEnum getTipo() {
         return tipo;
     }
