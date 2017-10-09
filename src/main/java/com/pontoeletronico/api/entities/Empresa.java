@@ -85,6 +85,7 @@ public class Empresa implements Serializable {
         dataAtualizacao = new Date();
     }
 
+    @PrePersist
     public void prePersist() {
         final Date atual = new Date();
         dataCriacao = atual;

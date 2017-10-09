@@ -7,15 +7,20 @@ import com.pontoeletronico.api.enums.PerfilEnum;
 import com.pontoeletronico.api.enums.TipoEnum;
 import com.pontoeletronico.api.utils.PasswordUtils;
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.security.NoSuchAlgorithmException;
 import java.util.Date;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -47,6 +52,21 @@ public class LancamentoRepositoryTest {
     @After
     public void tearDown() throws Exception {
         this.empresaRepository.deleteAll();
+    }
+
+    @Test
+    public void testBuscarLancamentosPorFuncionarioId() {
+        List<Lancamento> lancamentos = this.lancamentoRepository.findByFuncionarioId(funcionarioId);
+
+        Assert.assertEquals(2, lancamentos.size());
+    }
+
+    @Test
+    public void testBuscarLancamentosPorFuncionarioIdPaginado() {
+        PageRequest page = new PageRequest(0, 10);
+        Page<Lancamento> lancamentos = this.lancamentoRepository.findByFuncionarioId(funcionarioId, page);
+
+        Assert.assertEquals(2, lancamentos.getTotalElements());
     }
 
     private Lancamento obterDadosLancamentos(Funcionario funcionario) {
