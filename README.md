@@ -5,15 +5,27 @@ API do sistema de ponto eletrônico inteligente com Java 8 e Spring Boot para pr
 
 # Tecnologias e Frameworks utilizados:
 Java 8
+
 Spring Boot
+
 Spring Security
+
 TravisCI
+
 FlyWay
+
 JUnit test
+
 Maven
+
 JPA
+
 MySQL
+
 H2
+
 JWT
+
 Swagger
+
 EhCache
