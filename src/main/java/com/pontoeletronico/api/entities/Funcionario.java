@@ -81,6 +81,11 @@ public class Funcionario implements Serializable {
     public BigDecimal getValorHora() {
         return valorHora;
     }
+    
+    @Transient
+    public Optional<BigDecimal> getValorHoraOpt() {
+        return Optional.ofNullable(valorHora);
+    }
 
     public void setValorHora(BigDecimal valorHora) {
         this.valorHora = valorHora;
